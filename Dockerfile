@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+COPY target/web-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8081
-COPY target/web-0.0.1-SNAPSHOT.jar web-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/web-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
